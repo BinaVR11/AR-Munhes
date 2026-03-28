@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="menuestilo.css">
+</head>
+<body class="registro-body">
+
+  <canvas id="particles"></canvas>
+
+  <div class="menu-container">
+    <h1 class="focus-text">🐻‍❄️Registro de Escaneos🦜</h1>
+    <h2 id="contador">Cargando...</h2>
+
+    <table class="tabla-mensajes">
+  <tr>
+    <th>Rango de Tesoros</th>
+    <th>Mensaje</th>
+  </tr>
+  <tr>
+    <td>1 - 5</td>
+    <td>Aún te falta camino por recorrer</td>
+  </tr>
+  <tr>
+    <td>6 - 15</td>
+    <td>Estás cerca</td>
+  </tr>
+  <tr>
+    <td>16 - 20</td>
+    <td>Estás en la meta</td>
+  </tr>
+</table>
+
+    <button onclick="location.href='menu.html'">Volver</button>
+  </div>
+
+  <script>
+    let scanCount = localStorage.getItem("scanCount");
+    scanCount = scanCount ? parseInt(scanCount) : 0;
+    document.getElementById("contador").textContent =
+      "Tesoros encontrados: " + scanCount;
+
+
+
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>
