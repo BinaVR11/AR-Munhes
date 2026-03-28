@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>AR App</title>
+
+  <!-- AFRAME -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Botón Info -->
+  <button id="infoButton">
+    <img src="scan/info.png" alt="Info">
+  </button>
+  <!-- mostrar boton en pantalla-->
+  <div id="scanCounter">Escaneos: 0</div>
+
+  <!-- Caja Info -->
+  <div id="infoBox">
+    <h3>Información del Modelo</h3>
+    <p>
+      Este modelo 3D está siendo detectado mediante tecnología de Realidad Aumentada usando MindAR y A-Frame.
+    </p>
+  </div>
+
+  <!-- Escena AR -->
+  <a-scene
+    mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.mind;"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false"
+  >
+
+    <a-assets>
+      <img id="card" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/card.png" />
+
+      <a-asset-item id="avatarModel"
+        src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/softmind/scene.gltf">
+      </a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <a-entity id="target" mindar-image-target="targetIndex: 0">
+
+      <a-plane src="#card" height="0.552" width="1"></a-plane>
+
+      <a-gltf-model
+        position="0 0 0.1"
+        scale="0.005 0.005 0.005"
+        src="#avatarModel"
+        animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+      </a-gltf-model>
+
+    </a-entity>
+
+  </a-scene>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+  <!-- regresar -->
+<button onclick="location.href='menu.html'" class="back-btn"><img src="scan/btregreso.png" alt="Volver">
+</button>
+
+</body>
+</html>
