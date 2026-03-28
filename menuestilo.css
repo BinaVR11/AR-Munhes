@@ -169,3 +169,77 @@ button:hover img {
 #infoButton:hover img {
   transform: scale(1.1);
 }
+/* ===== RESPONSIVE GLOBAL ===== */
+@media (max-width: 768px) {
+
+  /* Contenedores */
+  .menu-container {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  /* Títulos */
+  .focus-text {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  /* Botones con imagen */
+  button img {
+    width: 90px;
+  }
+
+  /* Botones generales */
+  button {
+    padding: 8px;
+  }
+
+  /* Botón regresar */
+  .back-btn {
+    width: 45px;
+    height: 45px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .back-btn img {
+    width: 100%;
+  }
+
+  /* Botón info */
+  #infoButton {
+    width: 50px;
+    height: 50px;
+    right: 5px;
+  }
+
+  #infoButton img {
+    width: 100%;
+  }
+
+  /* Caja de información */
+  #infoBox {
+    width: 90%;
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  /* Contador escaneo */
+  #scanCounter {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  /* Imagen inferior */
+  .imagen-footer {
+    width: 100px;
+    bottom: 10px;
+  }
+
+  /* Tabla (registro) */
+  .tabla-mensajes {
+    width: 90%;
+    font-size: 12px;
+  }
+
+}
